@@ -1,25 +1,25 @@
-const resposta = document.querySelector('caixaResposta');
-const btn = document.querySelector('btnGerar');
+const caixaResposta = document.querySelector('.caixaResposta');
+const btn = document.querySelector('.btnGerar');
 
-let caractere = ["!" , '?', '@', '#', '$'];
+function gerarSenha() {
+    const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
+    const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numeros = '0123456789';
+    const caracteresEspeciais = '!@#$%&*';
 
-function generator(){
-    // Transforma os numeros aleatorios em string, de 26 caractere, mas vai pegar apenas 8.
-       
-    let valor1 = Math.random().toString(26).slice(-9)
-    let valor2 = caractere.sort(() => Math.random() - 0.5)
+    const todosCaracteres = letrasMinusculas + letrasMaiusculas + numeros + caracteresEspeciais;
 
-    const teste = [...valor1, ...valor2];
+    let senha = '';
 
-    const randomizar = teste.sort(() => Math.random() - 0.5)
+    for (let i = 0; i < 10; i++) {
+        const indiceAleatorio = Math.floor(Math.random() * todosCaracteres.length);
+        senha += todosCaracteres.charAt(indiceAleatorio);
+    }
 
-    caixaResposta.value = randomizar.join('').slice(-10);
-
-/// aqui
-
-
-
+    caixaResposta.value = senha;
 }
+
+btn.addEventListener('click', gerarSenha);
 
 function copy(){
     navigator.clipboard.writeText(caixaResposta.value);
