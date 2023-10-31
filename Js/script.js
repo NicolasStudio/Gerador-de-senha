@@ -21,6 +21,7 @@ function gerarSenha() {
 
 btn.addEventListener('click', gerarSenha);
 
+
 function copy(){
     navigator.clipboard.writeText(caixaResposta.value);
 }
