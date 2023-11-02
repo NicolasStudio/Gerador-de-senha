@@ -34,6 +34,7 @@
         position: absolute;
         width: 50%;
         height: 15%;
+        padding-left: 10px;
         top: 55%;
         left: 25%;
         border: 4px solid #6d360f;
@@ -48,8 +49,8 @@
     
     .btnCopy{
         position: absolute;
-        width: 10%;
-        height: 15%;
+        width: 60px;
+        height: 54px;
         top: 55%;
         left: 78%;
         border: 4px solid #6d360f;
@@ -69,8 +70,8 @@
     .imgCopy{
         padding-top: 1%;
         bottom: -10%;
-        width: 85%;
-        height: 85%;
+        background-color: transparent;
+        width: 45px;
     }
     
     .btnGerar{
